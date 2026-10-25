@@ -1,0 +1,119 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- "要求指纹" / hidden apps: the system authentication sheet (biometrics or the screen-lock PIN). -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <!-- Optional ADB grant for reversible Xiaomi navigation-mode activation/recovery. -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Calendar widget: asked only when the user taps the widget; events are read on-device. -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <!-- Round 24: the inner screen's book-pose StandBy shows the photo library (asked the first time it appears). -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <!-- Weather widgets: approximate location, asked only when the user taps a Weather widget and picks
+         "Use Current Location"; read only while Home is on screen (no background location). -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Normal permission: the setup wizard / wallpaper sync writes 18Duo's wallpaper to the system Home + Lock screen. -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <!-- Normal (install-time) permission: lets the on-change hinge sensor report at lhasa's advertised
+         400 Hz instead of the 200 Hz app cap while Home is on screen (fold animation tracking). -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+    <queries>
+        <intent><action android:name="android.search.action.GLOBAL_SEARCH" /></intent>
+        <package android:name="com.google.android.googlequicksearchbox" />
+        <!-- Spotlight "Search Web": find the default browser and hand it the query. -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent><action android:name="android.intent.action.WEB_SEARCH" /></intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+    <application android:label="@string/app_name" android:icon="@mipmap/duo18_launcher" android:roundIcon="@mipmap/duo18_launcher"
+        android:name="com.jake.duolauncher.DuoApplication"
+        android:theme="@style/Theme.Duo" android:allowBackup="false" android:supportsRtl="true">
+        <!-- r22: lets simpleperf/perfetto sample the release build on the phone (does not make it debuggable). -->
+        <profileable android:shell="true" />
+        <!-- Allow the measured StandBy direction on target-36 large-screen devices. -->
+        <property android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY" android:value="true" />
+        <!-- r13: Home's requests are its own: no OEM orientation / min-aspect overrides, no user aspect-ratio
+             override, and no "orientation request loop" drop of the requests the letterbox watchdog sends. -->
+        <property android:name="android.window.PROPERTY_COMPAT_ALLOW_ORIENTATION_OVERRIDE" android:value="false" />
+        <property android:name="android.window.PROPERTY_COMPAT_ALLOW_MIN_ASPECT_RATIO_OVERRIDE" android:value="false" />
+        <property android:name="android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_OVERRIDE" android:value="false" />
+        <property android:name="android.window.PROPERTY_COMPAT_ALLOW_IGNORING_ORIENTATION_REQUEST_WHEN_LOOP_DETECTED" android:value="false" />
+        <service android:name="com.jake.duolauncher.DuneWallpaperService" android:label="@string/wallpaper_service_name"
+            android:permission="android.permission.BIND_WALLPAPER" android:exported="true">
+            <intent-filter><action android:name="android.service.wallpaper.WallpaperService" /></intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/dune_wallpaper" />
+        </service>
+        <service android:name="com.jake.duolauncher.SystemShadeAccessibilityService"
+            android:label="@string/shade_service_label"
+            android:description="@string/shade_service_description"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice"
+                android:resource="@xml/system_shade_accessibility_service" />
+        </service>
+        <service android:name="com.jake.duolauncher.AppleNotificationListener"
+            android:label="18Duo 苹果风格通知"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service android:name="com.jake.duolauncher.StandbyMonitorService" android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="User-enabled hinge posture monitoring for a locked foldable standby clock" />
+        </service>
+        <activity android:name="com.jake.duolauncher.LockedStandbyActivity" android:exported="true"
+            android:launchMode="singleTask" android:excludeFromRecents="true" android:taskAffinity="com.jake.duolauncher.core.lockclock"
+            android:theme="@style/Theme.Duo.LockClock" android:showWhenLocked="true" android:turnScreenOn="true" android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout" />
+        <!-- 18Duo lock screen: shown over (never instead of) the keyguard; unlock goes through requestDismissKeyguard. -->
+        <activity android:name="com.jake.duolauncher.LockScreenActivity" android:exported="false"
+            android:launchMode="singleTask" android:excludeFromRecents="true" android:noHistory="false"
+            android:taskAffinity="com.jake.duolauncher.core.lockscreen" android:theme="@style/Theme.Duo"
+            android:showWhenLocked="true" android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden|density" />
+        <!-- r8-split: the half of a gesture Split View that is not the dragged app (SplitViewPickerActivity.kt). -->
+        <activity android:name="com.jake.duolauncher.SplitViewPickerActivity" android:exported="false"
+            android:taskAffinity="com.jake.duolauncher.core.split" android:excludeFromRecents="true"
+            android:resizeableActivity="true" android:theme="@style/Theme.Duo"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|density|keyboardHidden" />
+        <activity android:name="com.jake.duolauncher.MainActivity" android:exported="true"
+            android:launchMode="singleTask" android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

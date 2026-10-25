@@ -1,0 +1,33 @@
+<resources>
+    <string name="wizard_title">开始使用 18Duo</string>
+    <string name="wizard_progress">第 %1$d 步，共 %2$d 步</string>
+    <string name="wizard_skip">稍后设置</string>
+    <string name="wizard_done">全部完成</string>
+    <string name="wizard_done_detail">18Duo 已成为默认桌面，并启用了手势导航。</string>
+    <string name="wizard_guide">图文教程</string>
+    <string name="wizard_step_done">已完成</string>
+    <string name="wizard_reopen">打开配置向导</string>
+    <string name="wizard_summary_pending">还有 %1$d 步未完成</string>
+    <string name="wizard_summary_done">4 步已全部完成</string>
+
+    <string name="wizard_step1_title">设为默认桌面</string>
+    <string name="wizard_step1_why">回到桌面的手势和按键才会回到 18Duo。</string>
+    <string name="wizard_step1_action">选择默认桌面</string>
+    <string name="wizard_step1_guide">打开「默认主屏幕应用」（会自动打开）\n点选 18Duo\n返回，本页会自动进入第 2 步</string>
+
+    <string name="wizard_step2_title">开启导航辅助服务</string>
+    <string name="wizard_step2_why">用于返回、主页、最近任务和呼出系统面板，不读取屏幕内容。</string>
+    <string name="wizard_step2_action">打开辅助功能</string>
+    <string name="wizard_step2_guide">打开「辅助功能」→「通用」标签\n下滑到「已下载的应用」\n点击「18Duo 导航手势」→ 开启 → 允许\n若提示「受限设置」：18Duo 应用信息 → 右上角 ⋮ → 允许受限设置，再回来重试</string>
+    <string name="wizard_step2_caption1">辅助功能列表</string>
+    <string name="wizard_step2_caption2">仅当提示「受限设置」时</string>
+
+    <string name="wizard_step3_title">全面屏手势</string>
+    <string name="wizard_step3_why">上滑回桌面，停留看后台，两侧向内滑返回。</string>
+    <string name="wizard_step3_action">启用手势</string>
+    <string name="wizard_step3_guide">打开「系统导航方式」（会自动打开）\n选择「全面屏手势」\n回到 18Duo，手势会自动启用</string>
+    <string name="wizard_step3_optional_title">可选：隐藏系统小横条</string>
+    <string name="wizard_step3_optional_why">需要在本机完成一次无线调试授权；不做也不影响手势。</string>
+    <string name="wizard_step3_optional_action">隐藏小横条</string>
+    <string name="wizard_step3_optional_guide">设置 → 关于手机 → 连续点按「OS 版本」7 次\n开发者选项 → 调试 → 无线调试\n开启后点「输入配对码配对设备」，再点 18Duo 浮钮输入配对码</string>
+</resources>

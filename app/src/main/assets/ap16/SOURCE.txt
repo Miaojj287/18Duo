@@ -1,0 +1,8 @@
+Source: 小米ios主题.mtz, theme "AP16超级米果" (description.xml version 20250719), author/designer 超级苏哥
+Source SHA-256: 247806b2eed556b4ac672640820d1be504eddb1868a9faafaeaecaae9a7ff396
+cc/*.png      <- lockscreen/advance/ControlCenter, advance/music (prev/play/pause/next), advance/focus/1/icon_1 (focus), advance/home/clear
+status/*.png  <- com.android.systemui res/drawable-xxhdpi stat_sys_signal_*, stat_sys_wifi_signal_*, stat_sys_alarm
+                 and res/raw-xxhdpi stat_sys_battery_{digital,charge_digit,power_save_digit} (100 frames of 98x60, frame = level - 1)
+"_dark" files are the theme's *_darkmode variants (dark glyphs for light backgrounds).
+Used only by 18Duo's optional Apple status bar / Notification Center / Control Center overlay; files are unmodified copies.
+Artwork belongs to its respective creators; it is not covered by the project's MIT code license.

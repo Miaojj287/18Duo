@@ -1,0 +1,11 @@
+AndroidLiquidGlass / Backdrop
+Copyright 2025 Kyant
+https://github.com/Kyant0/AndroidLiquidGlass
+
+Licensed under the Apache License, Version 2.0 (see Apache-2.0.txt in this directory).
+
+18Duo adapts the rounded-rectangle signed-distance functions and the lens-refraction AGSL shader
+(app/src/main/java/com/jake/duolauncher/LiquidGlassShaders.kt). Modifications: corner lookup in
+centred coordinates, a bounded 3-tap RGB dispersion in place of the 7-tap spectral version, and a
+new directional specular-rim shader. The Compose modifier that draws the glass (LiquidGlass.kt) is
+an independent implementation on top of the Haze backdrop capture; no other upstream code is used.

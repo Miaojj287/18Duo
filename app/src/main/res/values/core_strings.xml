@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="core_arrange_apps">Arrange apps</string>
+    <string name="core_arrange_detail">Arrange installed apps across Home pages; you can undo this change.</string>
+    <string name="core_about">18Duo</string>
+    <string name="core_month_calendar">Month and agenda</string>
+    <string name="core_calendar_access">Today’s agenda</string>
+    <string name="core_calendar_empty">No events today</string>
+    <string name="core_calendar_unavailable">Agenda unavailable</string>
+    <string name="core_calendar_all_day">All day</string>
+    <string name="core_calendar_untitled">Untitled event</string>
+    <string name="core_calendar_enable">Read calendar</string>
+    <string name="core_widget_app_unavailable">No app is available for this action</string>
+    <string name="core_profile_clone">Clone</string>
+    <string name="core_profile_clone_app">%1$s (%2$s)</string>
+</resources>

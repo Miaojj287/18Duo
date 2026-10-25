@@ -1,0 +1,11 @@
+Source: 小米·iOS26·主题.mtz (icons/res/drawable-xxhdpi)
+Theme title: 遇见hyper26
+Author in description.xml: 酷安@horla
+Source SHA-256: d53707cc2eb0802ab2477683a0a535391d793719786424c66d325559537363a3
+Converted app icons: 1623; size: 144x144; WebP quality: 92
+Original icon packages excluded: com.bytedance.android.doubaoime, com.hpbr.bosszhipin, com.larus.nova, com.tencent.lolm, com.tencent.tmgp.sgame
+Artwork belongs to its respective creators; it is not covered by the project's MIT code license.
+HD overlay: _icons.zip (ios/*.png) from the AP16超级米果 theme package by 超级苏哥
+HD overlay SHA-256: 7cfd64472cb3986936887c4371b59e239c100d6bef5a61915cc3d4559d764295
+HD overlay replaced 59 launcher keys for 50 icons; see scripts/overlay-hd-icons.py for the mapping
+Duo iOS 26 overlay: 32 launcher keys from 27 icons cut from the owner's iPhone Duo screenshots; see scripts/overlay-duo-ios26-icons.py

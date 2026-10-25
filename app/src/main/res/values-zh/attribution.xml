@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="duo18_about">关于 18Duo</string>
+    <string name="duo18_author">由 D.JT 开发与维护</string>
+    <string name="duo18_copyright">© 2026 D.JT。对依法享有权利的原创部分保留相应权利。第三方代码遵循各自的开源许可证。</string>
+    <string name="duo18_version">版本 %1$s</string>
+    <string name="duo18_licenses">开源许可</string>
+    <string name="duo18_fold_animation">开合动画</string>
+    <string name="duo18_fold_animation_detail">默认开启。关闭后停用内外屏的玻璃开合效果，不影响屏幕切换和 StandBy。</string>
+    <string name="duo18_standby">开启 StandBy</string>
+    <string name="duo18_standby_detail">默认关闭。开启后，外屏横放进入 StandBy；不影响内屏。</string>
+</resources>

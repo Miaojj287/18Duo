@@ -1,0 +1,40 @@
+{
+ "results": [
+  {
+   "id": 1796236,
+   "name": "上海",
+   "latitude": 31.22222,
+   "longitude": 121.45806,
+   "elevation": 12.0,
+   "feature_code": "PPLA",
+   "country_code": "CN",
+   "admin1_id": 1796231,
+   "timezone": "Asia/Shanghai",
+   "population": 24874500,
+   "country_id": 1814991,
+   "country": "中国",
+   "admin1": "上海"
+  },
+  {
+   "id": 5391959,
+   "name": "San Francisco",
+   "latitude": 37.77493,
+   "longitude": -122.41942,
+   "elevation": 16.0,
+   "feature_code": "PPLA2",
+   "country_code": "US",
+   "admin1_id": 5332921,
+   "admin2_id": 5391997,
+   "timezone": "America/Los_Angeles",
+   "population": 864816,
+   "postcodes": [
+    "94102"
+   ],
+   "country_id": 6252001,
+   "country": "United States",
+   "admin1": "California",
+   "admin2": "San Francisco"
+  }
+ ],
+ "generationtime_ms": 0.9
+}

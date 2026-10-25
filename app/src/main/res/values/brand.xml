@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">18Duo</string>
+    <color name="duo18_icon_background">#5FB548</color>
+</resources>

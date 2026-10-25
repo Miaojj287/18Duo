@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="core_arrange_apps">整理应用</string>
+    <string name="core_arrange_detail">按本机已安装应用整理桌面，可撤销。</string>
+    <string name="core_about">18Duo</string>
+    <string name="core_month_calendar">月历与日程</string>
+    <string name="core_calendar_access">查看今日日程</string>
+    <string name="core_calendar_empty">今天没有日程</string>
+    <string name="core_calendar_unavailable">日程暂不可用</string>
+    <string name="core_calendar_all_day">全天</string>
+    <string name="core_calendar_untitled">未命名日程</string>
+    <string name="core_calendar_enable">读取日历</string>
+    <string name="core_widget_app_unavailable">未找到可处理此操作的应用</string>
+    <string name="core_profile_clone">双开</string>
+    <string name="core_profile_clone_app">%1$s（%2$s）</string>
+</resources>

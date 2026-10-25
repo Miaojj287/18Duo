@@ -1,0 +1,6 @@
+<resources>
+    <string name="recommended_layout_apply">Apply layout</string>
+    <string name="settings_back">Back</string>
+    <string name="recommended_layout">Use iPhone Duo default layout</string>
+    <string name="recommended_layout_detail">Arrange actual installed apps into four columns with a phone, browser, messages and music Dock, and set the icon footprint to 56 dp. Missing apps leave an empty Dock slot. You can undo this change in Settings before another edit.</string>
+</resources>

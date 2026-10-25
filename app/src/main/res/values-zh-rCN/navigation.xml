@@ -1,0 +1,14 @@
+<resources>
+    <string name="dune_wallpaper_description">18Duo 沙丘——会根据屏幕尺寸调整的启动器景观壁纸。</string>
+    <string name="shade_service_label">18Duo 导航手势</string>
+    <string name="shade_service_description">提供 iPhone 式全面屏手势：底部上滑回桌面或打开 App 切换器，沿底部横滑切换应用，两侧向内滑动返回，并可打开通知栏与快捷设置。会截取当前应用的画面（从底部开始上滑时，以及应用在前台稳定后，之后最多每隔几秒一次），用于让应用缩成卡片并在切换器中显示你离开时的样子；截图只保存在本机 18Duo 的不备份存储中，从不备份或上传，安全界面不保存，在切换器中上滑关闭该应用、卸载该应用或关闭本服务时删除。不读取窗口内容；只记下当前在前台的是哪个应用（包名），让卡片与指示条和该应用对应。在 18Duo 为默认桌面且系统启用手势导航时生效。</string>
+    <string name="navigation_title">导航与恢复</string>
+    <string name="navigation_help">底部上滑回桌面，途中停顿打开 App 切换器；沿底边左右滑动切换应用；两侧向内滑动返回。按住底边两秒，可随时打开恢复菜单。</string>
+    <string name="navigation_restore">恢复三键</string>
+    <string name="navigation_enable">启用手势</string>
+    <string name="navigation_restore_settings">请在系统导航设置中恢复三键导航。</string>
+    <string name="navigation_activation_required">缺少修改系统导航的权限。请先尝试系统手势设置；若被系统限制，可用 ADB 或受支持的手机端无线调试授权。</string>
+    <string name="navigation_action_failed">系统操作暂不可用，可按住底边打开恢复菜单。</string>
+    <string name="switcher_system_recents">系统最近任务</string>
+    <string name="switcher_empty">暂无最近使用的应用</string>
+</resources>

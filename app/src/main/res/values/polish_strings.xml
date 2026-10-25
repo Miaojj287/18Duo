@@ -1,0 +1,24 @@
+<resources>
+    <!-- Core.17 polish: strings that used to be hard-coded in one language. -->
+    <string name="standby_scene_locked">Only when locked</string>
+    <string name="standby_scene_locked_home">When locked or on Home</string>
+    <string name="standby_scene_manual">Manually only</string>
+    <string name="standby_status_off">Automatic lock-screen clock is off</string>
+    <string name="standby_status_not_shown">The system didn’t show the lock-screen clock. Check the lock-screen permission, then set the phone down again.</string>
+    <string name="standby_status_active">Posture monitor on · USB helper connected</string>
+    <string name="standby_status_waiting_usb">Posture monitor on · waiting for the USB helper</string>
+    <string name="standby_status_idle">Posture monitor on</string>
+    <string name="standby_status_failed">The background monitor didn’t start. Turn it on again in Settings.</string>
+    <string name="standby_channel">StandBy</string>
+    <string name="standby_notification_title">Tent-mode lock-screen clock is on</string>
+    <string name="standby_notification_text">Unlock to return Home · Tap to configure</string>
+    <string name="standby_notification_stop">Turn Off Automatic Clock</string>
+    <string name="dock_picker_title">Dock Position %1$d</string>
+    <string name="dock_picker_title_apps">Your Apps</string>
+    <string name="dock_choose_app">Choose %1$s</string>
+    <string name="dock_empty_slot">Empty Dock position %1$d</string>
+    <string name="widget_saved_title">Saved widget</string>
+    <string name="widget_profile_unavailable">Profile unavailable</string>
+    <string name="widget_provider_unavailable">That widget or profile isn’t available. Choose a replacement.</string>
+    <string name="widget_unavailable_hint">Widget unavailable. Tap to choose a widget from an installed app.</string>
+</resources>

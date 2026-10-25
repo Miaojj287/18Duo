@@ -1,0 +1,33 @@
+<resources>
+    <string name="wizard_title">Get started with 18Duo</string>
+    <string name="wizard_progress">Step %1$d of %2$d</string>
+    <string name="wizard_skip">Set up later</string>
+    <string name="wizard_done">All set</string>
+    <string name="wizard_done_detail">18Duo is your Home with gesture navigation.</string>
+    <string name="wizard_guide">Illustrated guide</string>
+    <string name="wizard_step_done">Done</string>
+    <string name="wizard_reopen">Open the setup wizard</string>
+    <string name="wizard_summary_pending">%1$d of 4 steps remaining</string>
+    <string name="wizard_summary_done">All 4 steps complete</string>
+
+    <string name="wizard_step1_title">Set as default Home</string>
+    <string name="wizard_step1_why">So the Home gesture and the Home button return to 18Duo.</string>
+    <string name="wizard_step1_action">Choose default Home</string>
+    <string name="wizard_step1_guide">Open Default Home app (opens automatically)\nTap 18Duo\nGo back; this sheet continues with step 2</string>
+
+    <string name="wizard_step2_title">Enable the navigation service</string>
+    <string name="wizard_step2_why">Performs Back, Home and Recents and opens system panels. It never reads screen content.</string>
+    <string name="wizard_step2_action">Open Accessibility</string>
+    <string name="wizard_step2_guide">Open Accessibility → General tab\nScroll down to Downloaded apps\nTap 18Duo Navigation gestures → turn on → Allow\nIf blocked by “Restricted settings”: 18Duo app info → More (⋮) → Allow restricted settings, then retry</string>
+    <string name="wizard_step2_caption1">Accessibility list</string>
+    <string name="wizard_step2_caption2">Only if “Restricted settings” blocks it</string>
+
+    <string name="wizard_step3_title">Full-screen gestures</string>
+    <string name="wizard_step3_why">Swipe up for Home, pause for Recents, swipe inward from an edge to go back.</string>
+    <string name="wizard_step3_action">Enable gestures</string>
+    <string name="wizard_step3_guide">Open System navigation (opens automatically)\nChoose Gestures\nReturn to 18Duo; gestures turn on automatically</string>
+    <string name="wizard_step3_optional_title">Optional: hide the system bar</string>
+    <string name="wizard_step3_optional_why">Needs a one-time wireless-debugging authorization on this phone. Gestures work without it.</string>
+    <string name="wizard_step3_optional_action">Hide the bar</string>
+    <string name="wizard_step3_optional_guide">Settings → About phone → tap OS version 7 times\nDeveloper options → Debugging → Wireless debugging\nTurn it on, tap Pair device with pairing code, then tap the 18Duo bubble and enter the code</string>
+</resources>

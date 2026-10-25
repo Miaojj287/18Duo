@@ -1,0 +1,255 @@
+{
+ "draws": [
+  {
+   "key": "sky",
+   "renderOrder": 0,
+   "world": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    6.123233995736766e-17,
+    1,
+    0,
+    0,
+    -1,
+    6.123233995736766e-17,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "additive": false,
+   "depthTest": false,
+   "depthWrite": false,
+   "textures": {
+    "uColorRampLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 6,
+     "file": "sky_uColorRampLutTexture.half",
+     "kind": "half",
+     "components": 4
+    },
+    "uWallpaperTexture": {
+     "wrapS": 1002,
+     "wrapT": 1002,
+     "w": 500,
+     "h": 185,
+     "file": "sky.rgba",
+     "kind": "srgb8"
+    }
+   }
+  },
+  {
+   "key": "stars",
+   "renderOrder": 1,
+   "world": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    6.123233995736766e-17,
+    1,
+    0,
+    0,
+    -1,
+    6.123233995736766e-17,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "additive": true,
+   "depthTest": false,
+   "depthWrite": false,
+   "textures": {
+    "uColorRampLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 3,
+     "file": "stars_uColorRampLutTexture.half",
+     "kind": "half",
+     "components": 4
+    }
+   }
+  },
+  {
+   "key": "hills",
+   "renderOrder": 2,
+   "world": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    6.123233995736766e-17,
+    1,
+    0,
+    0,
+    -1,
+    6.123233995736766e-17,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "additive": false,
+   "depthTest": true,
+   "depthWrite": true,
+   "textures": {
+    "uColorRampLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 3,
+     "file": "hills_uColorRampLutTexture.half",
+     "kind": "half",
+     "components": 4
+    },
+    "uCurveFloatLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 9,
+     "file": "hills_uCurveFloatLutTexture.half",
+     "kind": "half",
+     "components": 1
+    },
+    "uHashTexture": {
+     "wrapS": 1000,
+     "wrapT": 1000,
+     "w": 256,
+     "h": 256,
+     "file": "hills_uHashTexture.half",
+     "kind": "half",
+     "components": 4
+    },
+    "uWallpaperTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 2241,
+     "h": 411,
+     "file": "hills.webp",
+     "kind": "srgb8-image"
+    }
+   }
+  },
+  {
+   "key": "duneBack",
+   "renderOrder": 3,
+   "world": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    6.123233995736766e-17,
+    1,
+    0,
+    0,
+    -1,
+    6.123233995736766e-17,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "additive": false,
+   "depthTest": true,
+   "depthWrite": true,
+   "textures": {
+    "uColorRampLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 5,
+     "file": "duneBack_uColorRampLutTexture.half",
+     "kind": "half",
+     "components": 4
+    },
+    "uWallpaperTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 1191,
+     "h": 225,
+     "file": "duneBack.webp",
+     "kind": "srgb8-image"
+    }
+   }
+  },
+  {
+   "key": "duneFront",
+   "renderOrder": 4,
+   "world": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    6.123233995736766e-17,
+    1,
+    0,
+    0,
+    -1,
+    6.123233995736766e-17,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "additive": false,
+   "depthTest": true,
+   "depthWrite": true,
+   "textures": {
+    "uColorRampLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 9,
+     "file": "duneFront_uColorRampLutTexture.half",
+     "kind": "half",
+     "components": 4
+    },
+    "uCurveFloatLutTexture": {
+     "wrapS": 1001,
+     "wrapT": 1001,
+     "w": 256,
+     "h": 9,
+     "file": "duneFront_uCurveFloatLutTexture.half",
+     "kind": "half",
+     "components": 1
+    },
+    "uWallpaperTexture": {
+     "wrapS": 1002,
+     "wrapT": 1002,
+     "w": 2241,
+     "h": 1194,
+     "file": "duneFront.webp",
+     "kind": "srgb8-image"
+    }
+   }
+  }
+ ],
+ "clear": [
+  [
+   1,
+   1,
+   1
+  ],
+  1
+ ],
+ "size": [
+  2670,
+  1878
+ ]
+}

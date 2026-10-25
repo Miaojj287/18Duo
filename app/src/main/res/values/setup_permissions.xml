@@ -1,0 +1,10 @@
+<resources>
+    <string name="setup_permissions_title">Installation &amp; permissions</string>
+    <string name="setup_restricted_notice">First install: if accessibility is blocked by “Restricted settings”, allow it in 18Duo app info before enabling 18Duo Navigation gestures.</string>
+    <string name="setup_restricted_help">Only continue if you installed 18Duo from a trusted source. If Android reports “Restricted settings” or denies sensitive permissions: open 18Duo app info → More (⋮) → Allow restricted settings, then return to Accessibility → Downloaded apps → 18Duo Navigation gestures. On HyperOS, the installer may instead show “Allow the app to access permissions”; use its on-screen instructions. Names and availability vary by system version. 18Duo cannot approve this protection for you.</string>
+    <string name="setup_app_details">18Duo app info</string>
+    <string name="setup_permissions_help">For navigation: select 18Duo as the default Home app and enable its accessibility service. The service performs Back, Home, Recents and opens system panels; it does not read screen content.\n\nOptional: if the service stops in the background, review HyperOS autostart and battery restrictions. Approximate location is only needed for location-based features; selected wallpapers and widgets use their own system approval prompts. 18Duo does not need contacts, SMS, microphone or unrestricted file access.</string>
+    <string name="navigation_system_permission_help">If HyperOS requires switching back to the system launcher, cancel and use Computer-free authorization. Enable Wireless debugging, enter the pairing code via the Pair bubble, and enable gestures after system permission verification. No separate Shizuku app is needed. The phone must approve the system permission.</string>
+    <string name="navigation_enabled_check">Gesture mode enabled. Please test Back, Home and Recents; hiding the bar alone is not verification.</string>
+    <string name="navigation_default_required">Set 18Duo as the default launcher first, then enable gestures.</string>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="dune_wallpaper_description">18Duo dunes — the launcher’s landscape, sized for your display.</string>
+    <string name="shade_service_label">18Duo navigation</string>
+    <string name="shade_service_description">Provides iPhone-style edge gestures across apps: swipe up for Home or the app switcher, swipe along the bottom to switch apps, swipe in from either side for Back, plus notification and Quick Settings actions. It takes screenshots of the app in front (when you start a swipe up, and once an app has settled, then at most every few seconds) so each app can shrink into a card and appear in the switcher as you left it; they stay on this phone in the app\'s no-backup storage, are never backed up or sent, are skipped for secure screens, and are deleted when you swipe a card away, uninstall the app or turn this service off. It does not read window content; it only notes which app\'s window is in front (its package name) so cards and the home indicator match that app. Active when 18Duo is the default launcher and gesture navigation is enabled.</string>
+    <string name="navigation_title">Navigation and recovery</string>
+    <string name="navigation_help">Swipe up for Home; pause on the way to open the app switcher; swipe along the bottom edge to switch apps; swipe in from either side to go back. Hold the bottom edge for two seconds to open this recovery menu.</string>
+    <string name="navigation_restore">Restore buttons</string>
+    <string name="navigation_enable">Enable gestures</string>
+    <string name="navigation_restore_settings">Open system navigation settings to restore the three buttons.</string>
+    <string name="navigation_activation_required">System navigation permission is missing. Try system gesture settings first; restricted devices may need ADB or supported on-phone wireless debugging authorization.</string>
+    <string name="navigation_action_failed">System action unavailable. Hold the bottom edge for recovery.</string>
+    <string name="switcher_system_recents">System recents</string>
+    <string name="switcher_empty">No recent apps</string>
+</resources>

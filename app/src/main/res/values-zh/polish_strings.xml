@@ -1,0 +1,23 @@
+<resources>
+    <string name="standby_scene_locked">仅锁屏时</string>
+    <string name="standby_scene_locked_home">锁屏与桌面</string>
+    <string name="standby_scene_manual">仅手动</string>
+    <string name="standby_status_off">锁屏自动时钟已关闭</string>
+    <string name="standby_status_not_shown">系统未显示锁屏时钟，请检查锁屏显示权限后重新布置</string>
+    <string name="standby_status_active">后台姿态监听已开启 · USB 辅助已连接</string>
+    <string name="standby_status_waiting_usb">后台姿态监听已开启 · 等待 USB 辅助连接</string>
+    <string name="standby_status_idle">后台姿态监听已开启</string>
+    <string name="standby_status_failed">后台监听未启动，请从设置重新开启</string>
+    <string name="standby_channel">站立时钟</string>
+    <string name="standby_notification_title">倒 V 锁屏时钟已开启</string>
+    <string name="standby_notification_text">解锁后回到桌面 · 点按配置</string>
+    <string name="standby_notification_stop">停止自动时钟</string>
+    <string name="dock_picker_title">Dock 第 %1$d 个位置</string>
+    <string name="dock_picker_title_apps">你的应用</string>
+    <string name="dock_choose_app">选择“%1$s”</string>
+    <string name="dock_empty_slot">Dock 第 %1$d 个空位</string>
+    <string name="widget_saved_title">已保存的小组件</string>
+    <string name="widget_profile_unavailable">资料不可用</string>
+    <string name="widget_provider_unavailable">该小组件或资料已不可用，请选择替换项。</string>
+    <string name="widget_unavailable_hint">小组件不可用，点按选择已安装应用的小组件</string>
+</resources>

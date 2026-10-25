@@ -1,0 +1,33 @@
+<resources>
+    <style name="Theme.Duo" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <!-- Home's own window: whatever Android shows of it before Home draws (a cold-start starting
+             window, a frame before the wallpaper) is the dunes' average tone, never a light-grey flash
+             (round 3, item 4). The system wallpaper is never shown behind Home. -->
+        <item name="android:windowBackground">#B0A28C</item>
+        <item name="android:windowSplashScreenBackground">#B0A28C</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <item name="android:colorAccent">#007AFF</item>
+    </style>
+    <style name="Theme.Duo.LockClock" parent="Theme.Duo">
+        <item name="android:windowBackground">#000000</item>
+    </style>
+    <style name="Theme.Duo.Dialog" parent="android:style/Theme.Material.Light.Dialog.Alert">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#007AFF</item>
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:buttonStyle">@android:style/Widget.Material.Button.Borderless</item>
+    </style>
+    <style name="Theme.Duo.Dialog.Dark" parent="android:style/Theme.Material.Dialog.Alert">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#78AAFF</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:buttonStyle">@android:style/Widget.Material.Button.Borderless</item>
+    </style>
+</resources>

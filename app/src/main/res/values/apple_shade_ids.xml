@@ -1,0 +1,4 @@
+<resources>
+    <!-- Control Center grid cell of a child view (AppleControlCenter). -->
+    <item name="cc_cell" type="id" />
+</resources>

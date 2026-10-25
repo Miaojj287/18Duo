@@ -1,0 +1,6 @@
+<!-- SF-style chevron.down (semibold) for View-based disclosure rows. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="14dp" android:height="14dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:pathData="M4.8,8.6 L12,15.8 L19.2,8.6" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.6"
+        android:strokeLineCap="round" android:strokeLineJoin="round" android:fillColor="#00000000" />
+</vector>

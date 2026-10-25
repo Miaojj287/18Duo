@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="duo18_about">About 18Duo</string>
+    <string name="duo18_author">Developed and maintained by D.JT</string>
+    <string name="duo18_copyright">© 2026 D.JT. Rights reserved in the original contributions to the extent owned by D.JT. Third-party code remains under its respective licenses.</string>
+    <string name="duo18_version">Version %1$s</string>
+    <string name="duo18_licenses">Open-source licenses</string>
+    <string name="duo18_fold_animation">Fold animation</string>
+    <string name="duo18_fold_animation_detail">On by default. Turn off to disable glass projection on both screens. Screen switching and StandBy are unaffected.</string>
+    <string name="duo18_standby">Enable StandBy</string>
+    <string name="duo18_standby_detail">Off by default. When enabled, turning the cover screen sideways opens StandBy. The inner screen is unaffected.</string>
+</resources>
