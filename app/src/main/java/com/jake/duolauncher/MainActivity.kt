@@ -299,12 +299,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    /** Wizard step 3: enable the overlay when the service is up, otherwise go to system navigation settings. */
+    /** Wizard step 3: enable the overlay when the service is up, otherwise authorize (HyperOS) or open system navigation settings. */
     internal fun enableGesturesFromWizard() {
         if (SystemShadeAccessibilityService.isConnected() && (gestureModeEnabled.value ||
                 checkSelfPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) == PackageManager.PERMISSION_GRANTED)) {
             SystemShadeAccessibilityService.enableNavigationFromSetup(); refreshSetupChecks(); return
         }
+        // Choosing gestures there would hand Home back to the Xiaomi launcher; the grant lets 18Duo do it.
+        if (systemGesturesNeedGrant(this)) { showWirelessSetup(); return }
         // HyperOS hosts 系统导航方式 in the system launcher package; AOSP keeps it in Settings.
         for (candidate in listOf(
                 Intent().setClassName("com.miui.home", "com.miui.home.recents.settings.NavigationBarTypeActivity"),

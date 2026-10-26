@@ -40,6 +40,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -68,6 +69,11 @@ private val stepSpecs = listOf(
         R.string.wizard_step3_action, R.string.wizard_step3_guide, listOf(R.drawable.setup_guide_3_1 to null)),
 )
 
+/** HyperOS step 3: the wireless-debugging grant is the way in, not an optional extra. */
+private val grantGestureSpec = StepSpec(SetupStep.FULLSCREEN_GESTURES, IosSymbols.swipeUp, IosUi.indigo, R.string.wizard_step3_title,
+    R.string.wizard_step3_grant_why, R.string.wizard_step3_grant_action, R.string.wizard_step3_grant_guide,
+    listOf(R.drawable.setup_guide_3_2 to null, R.drawable.setup_guide_3_3 to null, R.drawable.setup_guide_3_4 to null))
+
 /**
  * Step-by-step first-run wizard, laid out like an iOS setup sheet: centred bold title, a short
  * progress strip, the steps as one inset-grouped list (crisp opaque cells — the Core.16 cards were
@@ -92,8 +98,11 @@ internal fun SetupWizardSheet(state: SetupWizardState, onMakeDefault: () -> Unit
         Column(Modifier.weight(1f).iosScrollEdgeFade(fadeTop = { scroll.value > 0 }, fadeBottom = { scroll.canScrollForward })
             .verticalScroll(scroll).padding(horizontal = 16.dp).padding(top = 18.dp, bottom = 12.dp)) {
             WizardHeader(state)
+            val context = LocalContext.current
+            val grantGestures = remember(context) { systemGesturesNeedGrant(context) }
             if (state.complete) SuccessCard() else IosInsetGroup {
-                stepSpecs.forEachIndexed { index, spec ->
+                stepSpecs.map { if (grantGestures && it.step == SetupStep.FULLSCREEN_GESTURES) grantGestureSpec else it }
+                    .forEachIndexed { index, spec ->
                     if (index > 0) IosSeparator(inset = 16.dp + 30.dp + 14.dp)
                     StepRow(spec, state.status(spec.step), state, onMakeDefault, onAccessibility, onGestures, onHidePill)
                 }
@@ -165,7 +174,7 @@ private fun StepRow(spec: StepSpec, status: SetupStepStatus, state: SetupWizardS
                 IosButton(stringResource(spec.action), action, Modifier.fillMaxWidth().padding(top = 12.dp), tag = "wizard-action-$index")
                 GuideToggle(guideOpen, { guideOpen = !guideOpen }, "wizard-guide-$index")
                 AnimatedVisibility(guideOpen) { GuideBody(spec.guide, spec.images) }
-                if (spec.step == SetupStep.FULLSCREEN_GESTURES) OptionalPill(state, onHidePill)
+                if (spec.step == SetupStep.FULLSCREEN_GESTURES && spec !== grantGestureSpec) OptionalPill(state, onHidePill)
             }
         }
     }

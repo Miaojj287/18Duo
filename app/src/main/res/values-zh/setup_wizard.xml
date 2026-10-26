@@ -27,7 +27,10 @@
     <string name="wizard_step3_action">启用手势</string>
     <string name="wizard_step3_guide">打开「系统导航方式」（会自动打开）\n选择「全面屏手势」\n回到 18Duo，手势会自动启用</string>
     <string name="wizard_step3_optional_title">可选：隐藏系统小横条</string>
-    <string name="wizard_step3_optional_why">需要在本机完成一次无线调试授权；不做也不影响手势。</string>
+    <string name="wizard_step3_optional_why">需要在本机完成一次无线调试授权，用于隐藏系统小横条。</string>
     <string name="wizard_step3_optional_action">隐藏小横条</string>
     <string name="wizard_step3_optional_guide">设置 → 关于手机 → 连续点按「OS 版本」7 次\n开发者选项 → 调试 → 无线调试\n开启后点「输入配对码配对设备」，再点 18Duo 浮钮输入配对码</string>
+    <string name="wizard_step3_grant_why">HyperOS 只允许小米桌面开启全面屏手势。在本机完成一次无线调试授权后，18Duo 会自己开启手势，并隐藏系统小横条。</string>
+    <string name="wizard_step3_grant_action">无线调试授权</string>
+    <string name="wizard_step3_grant_guide">设置 → 我的设备 → 全部参数与信息，连续点按「OS 版本」7 次，打开开发者选项\n点上方按钮，在「连接此手机」面板点「打开无线调试」，开启无线调试\n点「使用配对码配对设备」，再点 18Duo 浮钮，填入配对端口和 6 位配对码，点「配对并继续」\n授权成功后点「启用全面屏手势」</string>
 </resources>

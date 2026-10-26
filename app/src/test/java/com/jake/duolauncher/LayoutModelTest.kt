@@ -284,6 +284,18 @@ class LayoutModelTest {
         assertEquals(0f, cover.toHomeGeometry(labels = false).labelHeight, 0f)
     }
 
+    @Test fun `hiding app names enlarges home icons like iOS large icons`() {
+        for (frame in listOf(cover, inner)) {
+            val labelled = frame.toHomeGeometry()
+            val large = frame.toHomeGeometry(labels = false)
+            assertEquals(labelled.iconSize * LARGE_ICON_SCALE, large.iconSize, .001f)
+            assertEquals(large.iconSize, large.shortcutArtworkSize!!, 0f)
+            assertTrue("columns keep a visible gap", large.iconSize <= frame.grid.columnPitch * (1f - LARGE_ICON_MIN_GAP) + .001f)
+            assertTrue("the last row still ends above the dots",
+                large.contentTop + 5f * large.rowHeight + large.iconSize < frame.dots.centerY - frame.dots.dot / 2f)
+        }
+    }
+
     @Test fun `legacy homeGeometry entry point uses the same frame`() {
         assertEquals(cover.toHomeGeometry(), homeGeometry(425f, 622f, LayoutPreset(), true))
         assertEquals(inner.toHomeGeometry(), homeGeometry(860f, 608f, LayoutPreset(), true))

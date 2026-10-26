@@ -208,6 +208,9 @@ internal const val DOCK_CENTER_FRACTION = .5f
 internal const val FLOATING_DOCK_INSET = (DuoCover.DOCK_RIGHT - DuoCover.DOCK_LEFT - DuoCover.DOCK_ICON) / 2f / DuoCover.DOCK_ICON
 
 private const val LABEL_SP = 11f
+/** Home icon growth when app names are hidden (iOS 18 "Large"), and the column gap it must leave. */
+internal const val LARGE_ICON_SCALE = 1.18f
+internal const val LARGE_ICON_MIN_GAP = .14f
 /** Icon → label gap: Apple's label cap starts ≈15 % of the icon below it (reviews/visual 94). */
 private const val LABEL_GAP_DP = 5.5f
 /** Space kept between side-column elements when the Dock has to be clamped. */
@@ -742,7 +745,10 @@ private fun DuoHomeFrame.withDotsAvoiding(cutouts: List<DuoBox>): DuoHomeFrame {
 fun DuoHomeFrame.toHomeGeometry(preset: LayoutPreset = LayoutPreset(), labels: Boolean = true): HomeGeometry {
     val p = preset.sanitized()
     val g = grid
-    val artwork = g.icon * (p.iconSize / LayoutPreset().iconSize)
+    val standard = g.icon * (p.iconSize / LayoutPreset().iconSize)
+    // iOS 18 "Large" icons: hiding the names gives the icons that room, short of crowding the columns.
+    val artwork = if (labels) standard
+        else minOf(standard * LARGE_ICON_SCALE, g.columnPitch * (1f - LARGE_ICON_MIN_GAP)).coerceAtLeast(standard)
     val text = if (labels) labelHeight else 0f
     // The last label must end above the page dots (Apple leaves ≈7 dp unfolded); larger text or a
     // wider row-spacing preference never pushes it further.

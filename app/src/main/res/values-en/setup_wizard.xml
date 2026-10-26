@@ -27,7 +27,10 @@
     <string name="wizard_step3_action">Enable gestures</string>
     <string name="wizard_step3_guide">Open System navigation (opens automatically)\nChoose Gestures\nReturn to 18Duo; gestures turn on automatically</string>
     <string name="wizard_step3_optional_title">Optional: hide the system bar</string>
-    <string name="wizard_step3_optional_why">Needs a one-time wireless-debugging authorization on this phone. Gestures work without it.</string>
+    <string name="wizard_step3_optional_why">Needs a one-time wireless-debugging authorization on this phone to hide the system bar.</string>
     <string name="wizard_step3_optional_action">Hide the bar</string>
     <string name="wizard_step3_optional_guide">Settings → About phone → tap OS version 7 times\nDeveloper options → Debugging → Wireless debugging\nTurn it on, tap Pair device with pairing code, then tap the 18Duo bubble and enter the code</string>
+    <string name="wizard_step3_grant_why">HyperOS only allows gesture navigation with the Xiaomi launcher. After a one-time wireless-debugging authorization on this phone, 18Duo turns gestures on itself and hides the system bar.</string>
+    <string name="wizard_step3_grant_action">Authorize wireless debugging</string>
+    <string name="wizard_step3_grant_guide">Settings → My device → All specs: tap OS version 7 times to unlock Developer options\nTap the button above, then Open Wireless debugging in the Connect this phone panel and turn it on\nTap Pair device with pairing code, tap the 18Duo bubble, enter the pairing port and 6-digit code, then Pair and continue\nOnce authorized, tap Enable fullscreen gestures</string>
 </resources>
