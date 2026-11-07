@@ -2,7 +2,7 @@
 
 <h1 align="center">18Duo</h1>
 <p align="center">把 iPhone Duo 风格的桌面，装进你的 Android 折叠屏。</p>
-<p align="center"><a href="https://miaojj287.github.io/18Duo/"><b>在线预览与下载</b></a> · <a href="release/18Duo-V1.0.0.apk"><b>下载 V1.0.0 APK</b></a> · Android 12+ · MIT 开源</p>
+<p align="center"><a href="https://yijunmiao.com/18Duo/"><b>在线预览与下载</b></a> · <a href="release/18Duo-V1.0.0.apk"><b>下载 V1.0.0 APK</b></a> · Android 12+ · MIT 开源</p>
 
 | 展开桌面 | 外屏桌面 |
 | :---: | :---: |
@@ -54,7 +54,7 @@
 
 根目录 `index.html` 是极简下载页，包含真实截图、Duo 原版折叠机身与过渡、七种姿态与远端下载点击统计。查看器按需加载，支持连续拖动开合；静止及后台暂停渲染。
 
-网站地址：**https://miaojj287.github.io/18Duo/**。GitHub Pages 使用 **GitHub Actions**，推送网页更新后自动发布。[发布与统计说明](docs/website.md)
+网站地址：**https://yijunmiao.com/18Duo/**。GitHub Pages 使用 **GitHub Actions**，推送网页更新后自动发布。[发布与统计说明](docs/website.md)
 
 ## 许可
 
