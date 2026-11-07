@@ -1,46 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>18Duo</title>
-  <meta name="description" content="在 Android 折叠屏上还原 iPhone Duo 的完整桌面。V1.0.0，Android 12 及以上。">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#050507">
-  <link rel="stylesheet" href="site.css">
+  <title>Xiaomi V5 — 18Duo</title>
+  <meta name="description" content="把 iPhone Duo 风格的桌面，装进你的 18 Fold。免费下载 18Duo APK。">
+  <meta name="theme-color" content="#fafaf9">
+  <meta name="color-scheme" content="light">
+  <meta property="og:title" content="Xiaomi V5 — 18Duo">
+  <meta property="og:description" content="Xiaomi V5。把 iPhone Duo 风格的桌面，装进你的 18 Fold。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/screenshots/home-inner.493564f41d5e.webp">
+  <link rel="icon" type="image/png" href="assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/logo.png">
+  <link rel="preload" as="image" href="assets/screenshots/home-inner.493564f41d5e.webp">
+  <link rel="stylesheet" href="site.css?v=14">
+  <script defer src="assets/site/config.js"></script>
+  <script defer src="assets/site/counter.js"></script>
+  <script defer src="site.js?v=14"></script>
 </head>
 <body>
-  <main class="stage">
-    <div class="sky" aria-hidden="true">
-      <span class="glow g1"></span>
-      <span class="glow g2"></span>
-      <span class="glow g3"></span>
-      <i style="--x:6%;--d:0s;--t:7s"></i>
-      <i style="--x:14%;--d:2.4s;--t:9s"></i>
-      <i style="--x:22%;--d:5.1s;--t:8s"></i>
-      <i style="--x:31%;--d:1.2s;--t:10s"></i>
-      <i style="--x:39%;--d:6.3s;--t:7.5s"></i>
-      <i style="--x:47%;--d:3.7s;--t:9.5s"></i>
-      <i style="--x:55%;--d:0.8s;--t:8.5s"></i>
-      <i style="--x:63%;--d:4.6s;--t:7s"></i>
-      <i style="--x:71%;--d:2s;--t:10.5s"></i>
-      <i style="--x:79%;--d:5.8s;--t:8s"></i>
-      <i style="--x:87%;--d:1.6s;--t:9s"></i>
-      <i style="--x:94%;--d:3.2s;--t:7.5s"></i>
-    </div>
-
-    <h1 class="title">18Duo</h1>
-    <p class="sub">把 iPhone Duo 的桌面，装进你的折叠屏。</p>
-
-    <div class="fold" aria-hidden="true">
-      <div class="leaf left"><div class="screen"></div></div>
-      <div class="hinge"></div>
-      <div class="leaf right"><div class="screen"></div></div>
-    </div>
-
-    <a class="glass-btn" href="release/18Duo-V1.0.0.apk" download="18Duo-V1.0.0.apk"
-       type="application/vnd.android.package-archive">下载 APK</a>
-    <p class="meta">V1.0.0 · Android 12 及以上</p>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <nav class="navigation" aria-label="主导航">
+      <a class="brand" href="#" aria-label="18Duo 首页"><img src="assets/brand/logo.png" alt="" width="32" height="32"><span>18Duo</span></a>
+      <div class="nav-links"><a href="#preview">预览</a><a class="nav-download" data-download href="release/18Duo-V1.0.0.apk" download="18Duo-V1.0.0.apk">下载<span class="sr-only"> 18Duo APK</span></a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Xiaomi V5</h1>
+        <p class="hero-description">把 iPhone Duo 风格的桌面，<br class="mobile-break">装进你的 18 Fold。</p>
+        <a class="button button-primary" data-download href="release/18Duo-V1.0.0.apk" download="18Duo-V1.0.0.apk" type="application/vnd.android.package-archive"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5v10m-4-4 4 4 4-4M3.5 13v3.5h13V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>免费下载 APK</a>
+        <p class="release-meta">V1.0.0 <span aria-hidden="true">·</span> Android 12+ <span aria-hidden="true">·</span> 28.4 MB</p>
+        <p class="download-stat" data-download-stat aria-live="polite">下载统计加载中</p>
+      </div>
+      <div class="reference-viewer-shell" id="preview">
+        <iframe id="product-viewer-frame" class="reference-viewer" src="assets/viewer/index.html?v=gradient-repair-21" title="18Duo 产品查看器：折叠、横屏、竖屏、合起、坐立、站立与书本模式" scrolling="no" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </section>
   </main>
+  <footer class="site-footer"><a class="footer-brand" href="#">18Duo</a><p>独立开源项目，与 Apple、Xiaomi、Google 无关联。</p><div class="footer-links"><a data-repository hidden href="#">GitHub <span aria-hidden="true">↗</span></a><a href="LICENSE">MIT 许可</a><a href="THIRD_PARTY_NOTICES.md">第三方声明</a></div></footer>
+  <noscript><style>.reference-viewer-shell { display: none; }</style><p class="noscript-note">可直接下载 APK；启用 JavaScript 后可使用交互预览。</p></noscript>
 </body>
 </html>

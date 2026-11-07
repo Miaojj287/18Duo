@@ -1,37 +1,44 @@
-# 18Duo
+<p align="center"><img src="assets/brand/logo.png" alt="18Duo Logo" width="76"></p>
 
-在 Android 折叠屏上还原 **iPhone Duo** 的完整桌面：内外两块屏幕的布局、折叠动效、玻璃质感，再加上一些有点意思的小功能。
+<h1 align="center">18Duo</h1>
+<p align="center">把 iPhone Duo 风格的桌面，装进你的 Android 折叠屏。</p>
+<p align="center"><a href="https://miaojj287.github.io/18Duo/"><b>在线预览与下载</b></a> · <a href="release/18Duo-V1.0.0.apk"><b>下载 V1.0.0 APK</b></a> · Android 12+ · MIT 开源</p>
 
-当前版本 **V1.0.0** · 安装包 [`release/18Duo-V1.0.0.apk`](release/18Duo-V1.0.0.apk) · Android 12 及以上
+| 展开桌面 | 外屏桌面 |
+| :---: | :---: |
+| ![18Duo 展开桌面运行截图](assets/screenshots/home-inner.webp) | ![18Duo 外屏桌面运行截图](assets/screenshots/home-cover.webp) |
 
-## 桌面
+## 体验
 
-- **双屏布局**：内屏横屏时 Dock 在右侧，竖屏时在底部；外屏竖屏时 Dock 在右侧，横屏时在底部。状态信息固定在右上角，并避开摄像头。内外屏都可以旋转。
-- **今日视图、App 资源库、搜索**：今日视图在左侧，App 资源库在右侧，按分类整理应用，资源库里可以把应用隐藏或加锁。
-- **iOS 26 风格的玻璃效果**：文件夹、长按菜单、设置面板都使用透镜折射的玻璃材质，深浅会随壁纸自动切换。
-- **编辑桌面**：长按空白处进入编辑，可以跨页拖动图标、把一个应用拖到另一个上面建文件夹（横向 3×3 分页），也能添加原生 Android 小组件并调整大小。
-- **苹果风格图标**（可选）：开启后，有对应资源的应用会换成苹果风格的图标。
+- **为双屏设计**：内外屏自适应布局、Dock 与旋转，搭配实时 3D 沙丘壁纸和开合动效。
+- **熟悉的桌面**：今日视图、App 资源库、搜索、文件夹和原生 Android 小组件；支持跨页拖动、隐藏与锁定应用。
+- **玻璃质感**：文件夹、菜单和设置采用 iOS 26 风格材质；可选苹果风格图标。
+- **折叠的另一面**：倒 V 站立进入 StandBy，书本姿态显示时钟、日历和照片；支持全面屏手势与 App 切换器。
 
-## 有点意思的功能
+| StandBy 站立时钟 | App 资源库 |
+| :---: | :---: |
+| ![StandBy 运行截图](assets/screenshots/standby.webp) | ![App 资源库运行截图](assets/screenshots/library.webp) |
 
-- **倒 V 站立时钟**：把手机折成倒 V 立在桌上，外屏停在桌面 5 秒后进入 StandBy。左右滑动可以在小组件、数字时钟、模拟表盘、带农历的日历、照片、天气之间切换；在暗处会自动变成黑底红字。
-- **书本姿态**：像书一样把内屏立在桌上，左页显示时钟和月历，右页显示相册照片，轻点一下退出。
-- **折叠动效**：开合手机时，画面会沿铰链透视折入，默认壁纸是一片实时渲染的 3D 沙丘，随开合角度变化。
-- **iPhone 式手势与 App 切换器**：从底部上滑回到桌面，上滑后停住会打开切换器，切换器里的卡片保留应用离开时的画面。沿底边横滑可以切换应用，从两侧边缘向内滑是返回。
+桌面截图来自隔离演示构建的原生运行；展开桌面移除 Paint 图标后，网格与 Dock 共 15 个应用、无重复图标。分屏由 Android 系统真实运行，笔记页已按网页展示需要清理工具栏。来源与展示修饰范围见 [图片说明](assets/screenshots/SOURCE.md)。
+
+### 折叠姿态
+
+| 书本模式 · 时钟、月历与照片 | StandBy · 站立日历 |
+| :---: | :---: |
+| ![书本模式原生运行截图，左侧时钟与月历、右侧相册区域显示默认壁纸](assets/screenshots/book-mode.webp) | ![站立日历原生运行截图](assets/screenshots/standby-calendar.webp) |
+
+模式截图由项目现有 Android 截图测试直接渲染并导出；书本模式右侧相册区域在此示例中显示默认壁纸。
+
+<p align="center"><img src="assets/screenshots/split-screen.webp" alt="Android 原生应用分屏：上方笔记，下方计算器" width="280"></p>
+<p align="center">半折演示 · 上方笔记，下方计算器</p>
 
 ## 安装
 
-1. 下载并安装 `release/18Duo-V1.0.0.apk`。
-2. 打开 18Duo，按引导把它设为默认桌面。
-3. 如果需要手势和 App 切换器，按引导开启 18Duo 的无障碍服务。
+1. [下载并安装 APK](release/18Duo-V1.0.0.apk)。
+2. 打开 18Duo，按引导设为默认桌面。
+3. 如需手势和 App 切换器，按引导开启无障碍服务。
 
-在桌面空白处长按，进入编辑菜单后可以打开「设置」。
-
-> **HyperOS 用户注意**：系统只允许在小米自带桌面下开启全面屏手势，所以在 HyperOS 上，引导第 3 步会带你完成一次无线调试授权，之后由 18Duo 自己开启手势。
-
-## 官网
-
-仓库根目录的 `index.html` 就是下载页。在 GitHub 仓库的 Settings → Pages 中选择 `main` 分支、`/ (root)` 目录即可发布。
+**HyperOS**：系统限制第三方桌面使用全面屏手势，引导第 3 步会带你完成无线调试授权。长按桌面空白处可进入编辑和设置。
 
 ## 从源码构建
 
@@ -41,8 +48,14 @@
 ./gradlew :app:assembleDebug
 ```
 
-如果要打签名 Release，需要同时设置 `DUO_RELEASE_STORE_FILE`、`DUO_RELEASE_STORE_PASSWORD`、`DUO_RELEASE_KEY_ALIAS`、`DUO_RELEASE_KEY_PASSWORD` 四个环境变量，然后运行 `./gradlew :app:assembleRelease`。
+签名 Release：配置 `DUO_RELEASE_STORE_FILE`、`DUO_RELEASE_STORE_PASSWORD`、`DUO_RELEASE_KEY_ALIAS`、`DUO_RELEASE_KEY_PASSWORD`，运行 `./gradlew :app:assembleRelease`。密钥文件须位于仓库外。
+
+## 下载网站
+
+根目录 `index.html` 是极简下载页，包含真实截图、Duo 原版折叠机身与过渡、七种姿态与远端下载点击统计。查看器按需加载，支持连续拖动开合；静止及后台暂停渲染。
+
+网站地址：**https://miaojj287.github.io/18Duo/**。GitHub Pages 使用 **GitHub Actions**，推送网页更新后自动发布。[发布与统计说明](docs/website.md)
 
 ## 许可
 
-代码以 [MIT](LICENSE) 许可发布，依赖库和字体的许可见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。可选的苹果风格图标属于第三方素材，不在 MIT 许可范围内。本项目与 Apple、Xiaomi、Google 均无关联。
+[MIT](LICENSE) · [第三方许可](THIRD_PARTY_NOTICES.md)。本项目与 Apple、Xiaomi、Google 无关联。

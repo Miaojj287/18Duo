@@ -23,9 +23,13 @@ Copyright notices for this project are in `LICENSE`. Dependencies retain their o
 | Gradle wrapper and build tooling | https://github.com/gradle/gradle | Apache 2.0; build-tool distributions include their additional notices |
 | Optional Apple-style app icon artwork from the Xiaomi MTZ theme “遇见hyper26” | `app/src/main/assets/apple_icons/`; source attribution and checksum in `SOURCE.txt` | Theme metadata credits 酷安@horla. Artwork is third-party material and is not covered by this project's MIT code license. |
 | Apple-style HD app icons (50 apps) and status-bar / Control Center artwork from the Xiaomi MTZ theme “AP16超级米果” | `app/src/main/assets/apple_icons/` and `app/src/main/assets/ap16/`; attribution and checksum in each `SOURCE.txt` | Theme metadata credits 超级苏哥. Artwork is third-party material and is not covered by this project's MIT code license. |
+| Three.js 0.165.0, copyright 2010–2024 three.js authors | https://github.com/mrdoob/three.js/tree/r165; included in the supplied Duo website runtime in `assets/viewer/v/` | MIT; complete notice in `assets/viewer/vendor/THREE-LICENSE.txt` |
+
+| iPhone Duo reference viewer, scene, model, styles and bundled runtime | User-supplied `iPhone-Duo-Readable` mirror; integrated in `assets/viewer/v/` | Reference assets and runtime retain their original rights and embedded notices; excluded from the project MIT code license. |
+| Xiaomi Mi logo used on the viewer's rear panel | Logo SVG from https://www.mi.com/global/; rendered in `assets/viewer/viewer-runtime.js` | Xiaomi retains rights to its logo and trademark; excluded from the project MIT code license. |
 
 The Gradle dependency graph records the resolved artifact versions. Test and build tools provide their own notices.
 
 Optional app icon artwork is converted from the supplied theme and used only when the user enables it in 18Duo settings. Installed application icons and widget content belong to their respective providers. Search can delegate to installed applications; their application code and content are not redistributed here.
 
-Apple, Google, Android, Samsung, and other referenced names are trademarks of their respective owners; this project is unaffiliated with those companies.
+Apple, Xiaomi, Google, Android, Samsung, and other referenced names are trademarks of their respective owners; this project is unaffiliated with those companies.

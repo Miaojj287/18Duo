@@ -1,0 +1,73 @@
+:root { --r-localnav-height: 0px; --r-globalnav-height: 0px; --viewer-height: 560px; }
+html, body { margin: 0; background: #fafaf9; min-width: 0 !important; width: 100%; height: var(--viewer-height); overflow: hidden !important; }
+body, button, input, .typography-all-access-pass-pv-item-label, .typography-all-access-pass-pv-item-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+.section-product-viewer, .product-viewer-component { height: var(--viewer-height) !important; min-height: 0 !important; padding: 0 !important; background: #fafaf9 !important; overflow: visible !important; }
+.section-header { display: none !important; }
+.product-viewer-component { outline: none; display: block !important; }
+.product-viewer-container { position: absolute !important; inset: 0 !important; width: 100% !important; height: var(--viewer-height) !important; }
+.product-viewer.gallery, .product-viewer-enhanced, .viewer-wrapper, .product-viewer-canvas { width: 100% !important; height: var(--viewer-height) !important; }
+.product-viewer-canvas { visibility: visible !important; }
+.product-viewer-canvas canvas { transform: none !important; }
+html.duo-loading .product-viewer-canvas canvas { opacity: 0 !important; }
+.all-access-pass--product-viewer { position: absolute !important; inset: 0 !important; width: 100% !important; height: var(--viewer-height) !important; transform: none !important; --aap-expanded-width: min(37vw, 360px); }
+.all-access-pass--product-viewer .controls { position: absolute !important; left: 20px !important; top: 50% !important; right: auto !important; bottom: auto !important; width: min(37%, 360px) !important; height: auto !important; margin: 0 !important; transform: translateY(-50%) !important; pointer-events: none !important; }
+.control-group { position: relative !important; display: block !important; width: 100% !important; height: auto !important; transform: none !important; }
+.control-item { position: relative !important; display: block !important; width: 100% !important; height: auto !important; max-width: none !important; margin: 4px 0 !important; transform: none !important; opacity: 1 !important; visibility: visible !important; overflow: visible !important; z-index: auto !important; }
+.control-item:not(.expanded) .control-item-content { display: none !important; }
+.control-item.expanded .control-item-content { display: block !important; visibility: visible !important; opacity: 1 !important; max-height: none !important; }
+.control-item.expanded { background: #eeeef0; border-radius: 20px; padding-bottom: 14px; }
+.control-item-open { display: inline-flex !important; width: auto !important; max-width: 100% !important; height: 36px !important; padding: 0 12px !important; opacity: 1 !important; visibility: visible !important; transform: none !important; pointer-events: auto !important; }
+.control-item-label { display: inline-flex !important; font-size: 13px !important; visibility: visible !important; opacity: 1 !important; transform: none !important; }
+.control-item-label .plus-icon { width: 20px; height: 20px; }
+.control-item-content, .control-item-content-mask, .control-item-content-inner { position: relative !important; inset: auto !important; width: auto !important; height: auto !important; max-width: none !important; transform: none !important; overflow: visible !important; }
+.control-item-content-inner { padding: 0 16px !important; pointer-events: auto !important; }
+.control-item-content-mask, .control-item-content-inner { visibility: visible !important; opacity: 1 !important; max-height: none !important; }
+.typography-all-access-pass-pv-item-body { font-size: 12px !important; line-height: 1.6 !important; margin: 4px 0 12px !important; }
+.control-item-bg-container, .control-item-nav, .paddlenav-container, .control-item-accessibility-container { display: none !important; }
+.control-detent-slider--input-wrapper { width: 100% !important; pointer-events: auto !important; }
+.control-item-content:focus, .control-item-accessibility-container:focus { outline: none !important; }
+.control-item-open:focus-visible, .close-button:focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; }
+.close-button-wrapper { position: absolute !important; top: 8px !important; right: 8px !important; display: block !important; opacity: 1 !important; visibility: visible !important; transform: none !important; z-index: 4; }
+.close-button-wrapper:has(.duo-play-fold) { display: flex !important; align-items: center; gap: 6px; }
+.duo-play-fold { display: inline-flex; align-items: center; gap: 4px; padding: 7px 11px; min-height: 36px; border: 0; border-radius: 20px; background: #eeeef0; color: #1d1d1f; font-size: 12px; cursor: pointer; pointer-events: auto; transition: background-color 150ms ease; }
+.duo-play-fold svg { width: 18px; height: 18px; }
+.duo-play-fold:focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; }
+.duo-play-fold[hidden] { display: none; }
+@media (hover: hover) and (pointer: fine) { .duo-play-fold:hover { background: #e0e0e4; } }
+.close-button { display: grid !important; place-items: center; width: 38px !important; height: 38px !important; opacity: 1 !important; visibility: visible !important; transform: none !important; color: #1d1d1f; pointer-events: auto !important; }
+.duo-status { position: absolute; bottom: 12px; right: 20px; left: 40%; z-index: 5; pointer-events: none; color: #6e6e73; font-size: 11px; text-align: center; }
+.duo-status[hidden] { display: none; }
+.duo-poster { display: none; position: absolute; inset: 30px 40px 30px 42%; align-items: center; justify-content: center; pointer-events: none; }
+.duo-poster img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 14px; }
+html.duo-loading .duo-poster, .duo-fallback .duo-poster { display: flex; }
+html.duo-loading .loader, .duo-fallback .loader { display: none !important; }
+.duo-fallback .product-viewer-container { visibility: hidden; }
+@media (max-width: 734px) {
+ .product-viewer-container, .product-viewer.gallery, .product-viewer-enhanced, .viewer-wrapper, .product-viewer-canvas { height: max(140px, calc(var(--viewer-height) - 262px)) !important; }
+ .all-access-pass--product-viewer { top: auto !important; bottom: 0 !important; height: auto !important; }
+ .all-access-pass--product-viewer .controls { position: relative !important; inset: auto !important; width: calc(100% - 24px) !important; margin: 0 12px 4px !important; transform: none !important; }
+ .control-group { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+ .control-item { margin: 0 !important; }
+ .control-item.expanded { grid-column: 1 / -1; }
+ .control-item-open { height: 34px !important; }
+ .typography-all-access-pass-pv-item-body { margin: 0 0 8px !important; }
+ .control-item.expanded { padding-bottom: 12px; }
+ .control-item-content-inner { padding: 0 14px !important; }
+ .duo-poster { inset: 20px 24px auto; height: max(120px, calc(var(--viewer-height) - 286px)); }
+ .duo-status { top: 12px; bottom: auto; left: 20px; right: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .product-viewer-component canvas { transition: opacity 160ms ease !important; } }
+/* Compact intrinsic layout without the reference card's hidden flex spacing. */
+.control-item { line-height: 0 !important; }
+.control-item:not(.expanded) { padding: 0 !important; }
+.control-item-open { margin: 0 !important; vertical-align: top; }
+.control-item-content-mask, .control-item-content-inner { display: block !important; }
+.typography-all-access-pass-pv-item-title { font-size: inherit !important; line-height: inherit !important; }
+.control-detent-slider--input-wrapper { margin-top: 12px !important; }
+@media (max-width: 734px) {
+ .control-detent-slider--input-wrapper { margin-top: 10px !important; }
+}
+@media (max-width: 734px) {
+ .product-viewer-container, .product-viewer.gallery, .product-viewer-enhanced, .viewer-wrapper, .product-viewer-canvas { height: var(--stage-height, 140px) !important; }
+ .duo-poster { height: calc(var(--stage-height, 140px) - 28px); }
+}

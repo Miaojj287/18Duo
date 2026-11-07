@@ -1,0 +1,58 @@
+name: Publish download page
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'index.html'
+      - 'site.css'
+      - 'site.js'
+      - 'assets/**'
+      - 'release/**'
+      - 'LICENSE'
+      - 'THIRD_PARTY_NOTICES.md'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Prepare static website
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/18duo-site"
+          cp index.html site.css site.js LICENSE THIRD_PARTY_NOTICES.md "$RUNNER_TEMP/18duo-site/"
+          cp -R assets release "$RUNNER_TEMP/18duo-site/"
+          touch "$RUNNER_TEMP/18duo-site/.nojekyll"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP']) / '18duo-site'
+          config = root / 'assets/site/config.js'
+          config.write_text(config.read_text().replace("repository: ''", 'repository: ' + json.dumps(os.environ['REPOSITORY'])))
+          page = root / 'index.html'
+          page.write_text(page.read_text().replace('data-repository hidden href="#"', 'data-repository href="https://github.com/' + os.environ['REPOSITORY'] + '"'))
+          PY
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/18duo-site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
