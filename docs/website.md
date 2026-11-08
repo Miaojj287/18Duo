@@ -22,6 +22,8 @@
 
 网站运行只需要静态文件，无需 npm 或在线模型服务。`viewer-runtime.js` 与 `viewer.css` 是嵌入适配源码；`v/` 保存参考运行时、模型和场景资源，第三方素材仍保留原权利归属。参考素材不包含在本项目 MIT 代码授权范围内。
 
+查看器的模型与场景配置同时提供无损 `.gz` 副本，支持原生解压的浏览器优先读取。修改 `assets/viewer/v/` 中的 `.bin`、`.gltf` 或 `.lsd` 后，运行 `python3 scripts/prepare-viewer-assets.py` 再预览或提交；GitHub Actions 发布时会重新生成。浏览器不支持解压，或副本缺失、损坏时自动读取原文件。内屏开合效果根据触摸设备和 GPU 限制分配缓冲，并缓存稳定的纹理；采样失败时直接显示原截图。
+
 ## 下载统计
 
 `assets/site/config.js` 已配置一个从 0 开始的 [Abacus](https://abacus.jasoncameron.dev/) 公共计数器。网页加载只读取计数，点击带 `data-download` 的下载链接才增加计数。数量由远端保存，所有访客看到同一统计；本地预览不计数。

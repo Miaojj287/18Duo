@@ -748,23 +748,63 @@
   }
   function installHingeScreenWipe(current) {
     const records = [];
+    const renderer = current.renderer;
+    const lightweight = matchMedia('(pointer: coarse)');
+    const maxTextureSize = renderer.capabilities.maxTextureSize;
     for (const name of ['skeleton_0_3_screenTexture_geo', 'skeleton_0_7_outerDisplayScreenTexture_geo']) {
       const material = current.hinge.component.element.getObjectByName(name).material;
       const nativeRender = material.onBeforeRender.bind(material);
       const wipe = current.hinge.component.chunks[material.name].Wipe;
-      // The reference textures are 2670px wide. Keep our 1800px screenshot
-      // at its native size so the clear panel is not downsampled twice.
-      wipe.renderTargetScale = 1;
-      const record = { name, passes: 0, amount: 0 };
+      const record = { name, passes: 0, cached: 0, amount: 0, fallback: false, resolution: 0 };
       records.push(record);
+      let cachedTexture = null, cachedKey = null, checkedTexture = null;
+      const invalidate = () => { cachedTexture = cachedKey = checkedTexture = null; };
+      renderer.domElement.addEventListener('webglcontextrestored', invalidate);
       material.onBeforeRender = (...args) => {
         // The source Wipe owns FramePass, both BlurPass stages and the
         // projected screen UV. They must be enabled as one complete chain.
-        const enabled = !reducedMotion.matches && current.__duoSelectedState === 'PT_SliderLanding';
+        let enabled = !reducedMotion.matches && current.__duoSelectedState === 'PT_SliderLanding' && !record.fallback;
+        const source = material.emissiveMapTarget;
+        const image = source?.image;
+        const longestSide = Math.max(image?.width || 1, image?.height || 1);
+        const budget = Math.min(maxTextureSize, lightweight.matches ? 768 : 1280);
+        wipe.renderTargetScale = Math.min(1, budget / longestSide);
         material.uniforms.enableFraming.value = enabled;
-        nativeRender(...args);
+        const u = material.uniforms;
+        const key = [enabled, u.renderTargetScale.value, u.wipeAmount.value, u.wipePosition.value, u.blurBounds.value.x, u.blurBounds.value.y].join(':');
+        // The effect depends on the image and hinge, while orbiting only
+        // changes the final projection. Reuse the complete native pass output.
+        if (enabled && source === cachedTexture && key === cachedKey) {
+          u.modelMatrixInverse.value.copy(args[4].matrixWorld).invert();
+          record.cached++;
+        } else {
+          nativeRender(...args);
+          cachedTexture = source;
+          cachedKey = key;
+          if (enabled) record.passes += 2;
+        }
+        record.resolution = Math.round(longestSide * wipe.renderTargetScale);
+        // Some mobile GPUs return a black target without a JavaScript error.
+        // Check once per screenshot; use the original texture if the pass failed.
+        if (enabled && source !== checkedTexture && image?.width >= 64 && wipe.duoTargets) {
+          checkedTexture = source;
+          const target = wipe.duoTargets.frame;
+          const pixel = new Uint8Array(4);
+          let light = 0;
+          try {
+            for (const [x, y] of [[.25, .35], [.5, .5], [.75, .65]]) {
+              renderer.readRenderTargetPixels(target, Math.floor(target.width * x), Math.floor(target.height * y), 1, 1, pixel);
+              light += pixel[0] + pixel[1] + pixel[2];
+            }
+            record.fallback = light === 0;
+          } catch { record.fallback = true; }
+          if (record.fallback) {
+            enabled = false;
+            material.uniforms.enableFraming.value = false;
+            nativeRender(...args);
+          }
+        }
         record.amount = enabled ? material.uniforms.wipeAmount.value : 0;
-        if (enabled) record.passes += 2;
       };
     }
     current.__duoScreenWipe = records;

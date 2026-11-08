@@ -8,6 +8,7 @@ on:
       - 'site.css'
       - 'site.js'
       - 'assets/**'
+      - 'scripts/prepare-viewer-assets.py'
       - 'release/**'
       - 'LICENSE'
       - 'THIRD_PARTY_NOTICES.md'
@@ -39,6 +40,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/18duo-site"
           cp index.html site.css site.js LICENSE THIRD_PARTY_NOTICES.md "$RUNNER_TEMP/18duo-site/"
           cp -R assets release "$RUNNER_TEMP/18duo-site/"
+          python3 scripts/prepare-viewer-assets.py "$RUNNER_TEMP/18duo-site"
           touch "$RUNNER_TEMP/18duo-site/.nojekyll"
           python3 - <<'PY'
           import json
